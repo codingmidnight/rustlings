@@ -4,9 +4,9 @@
 // `hour_of_day` is higher than 23.
 fn maybe_icecream(hour_of_day: u16) -> Option<u16> {
     // TODO: Complete the function body.
-    match hour_of_day{
-        <22 => Some(5),
-        >=22 and <=24 => Some(0),
+    match hour_of_day {
+        0..=21 => Some(5),
+        22..=23 => Some(0),
         _ => None,
     }
 }
@@ -23,7 +23,7 @@ mod tests {
     fn raw_value() {
         // TODO: Fix this test. How do you get the value contained in the
         // Option?
-        let icecreams = maybe_icecream(12).expect();
+        let icecreams = maybe_icecream(12).expect("There should be some icecreams");
 
         assert_eq!(icecreams, 5); // Don't change this line.
     }
