@@ -10,8 +10,11 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
-}
 
+    // (1..=num).collect::<Vec<_>>().into_iter().fold(1, |res, x| res*x)
+    // (1..=num).fold(1, |res, x| res*x)
+    (1..=num).product() //https://doc.rust-lang.org/stable/std/iter/trait.Iterator.html
+}
 fn main() {
     // You can optionally experiment here.
 }
